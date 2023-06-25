@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.33%;
+}
+
+body {
+  line-height: 1.6;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #ececec;
+  padding: 10px 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+}
+nav ul {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+nav ul li {
+  font-size: 2rem;
+  color: #333;
+  list-style: none;
+  cursor: pointer;
+}
+nav ul li:hover {
+  box-shadow: 0 2px 0 0 rgb(0, 0, 0);
+}
+
+.title {
+  display: grid;
+  place-items: center;
+  place-content: center;
+}
+.title h1 {
+  font-size: 7.6rem;
+  overflow: hidden;
+  border-right: 0.1em solid orange;
+  white-space: nowrap;
+  margin: 4rem auto;
+  animation: typing 5s steps(40, end) infinite, blinking 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  /* Animation typing effect in h1 */
+  from {
+    width: 0;
+  }
+  to {
+    width: 101%;
+  }
+}
+@keyframes blinking {
+  /* Animation blinking effect in h2*/
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+form #searchInput {
+  width: 60vw;
+  max-width: 400px;
+  padding: 10px 20px;
+  border: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-size: 1.8rem;
+  color: #333;
+}
+form #searchButton {
+  padding: 10px 20px;
+  background-color: #138065;
+  border: none;
+  font-size: 1.8rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.searchResultContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.searchResultContainer .searchResult {
+  width: 30%;
+  height: 100%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.searchResultContainer .searchResult img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.2s ease-in-out;
+}
+.searchResultContainer .searchResult:hover img {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+.searchResultContainer .searchResult a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: #284aad;
+  display: block;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+#showMoreButton {
+  background-color: #008cba;
+  font-size: 1.8rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  cursor: pointer;
+  display: none;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.6rem;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1198px) {
+  .searchResultContainer {
+    row-gap: 33px;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title h1 {
+    font-size: 6rem;
+  }
+  .searchResultContainer .searchResult {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .title h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .title h1 {
+    font-size: 4rem;
+  }
+  .searchResultContainer .searchResult {
+    width: 90%;
+  }
+}
